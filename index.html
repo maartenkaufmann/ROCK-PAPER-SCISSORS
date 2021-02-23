@@ -1,61 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROCK PAPER SCISSORS</title>
-</head>
-<body>
-
-  <script>
-
-    const weapons = ["ROCK", "PAPER", "SCISSORS"];
-    
-    function computerPlay() {
-        const randomChoice = Math.floor(Math.random() * weapons.length);
-        let computerSelection = (weapons[randomChoice]);
-        return computerSelection;
-    }
-
-    function playRound(user, comp) {
-      if (playerSelection === computerSelection) {
-            return "The result is a tie.";
-    } if (playerSelection === "ROCK") {
-          if(computerSelection === "SCISSORS") {
-            return "YOU WIN! The computer had: " + computerSelection + ". And you had " + playerSelection;
-       } else {
-         return "THE COMPUTER WINS The computer had: " + computerSelection + ". And you had " + playerSelection;
-       }
-    } if (playerSelection === "SCISSORS") {
-          if(computerSelection === "PAPER") {
-            return "YOU WIN! The computer had: " + computerSelection + ". And you had " + playerSelection;
-       } else {
-         return "THE COMPUTER WINS The computer had: " + computerSelection + ". And you had " + playerSelection;
-       }
-  } if (playerSelection === "PAPER") {
-          if(computerSelection === "ROCK") {
-            return "YOU WIN! The computer had: " + computerSelection + ". And you had " + playerSelection;
-       } else {
-         return "THE COMPUTER WINS The computer had: " + computerSelection + ". And you had " + playerSelection;
-       }
-      }
-}
-
-    const computerSelection = computerPlay();
-    let playerSelection = "roCK";
-    playerSelection = playerSelection.toUpperCase();
-
-    function game() {
-  for (let i=1; i <= 4; i++) {
-    return (playRound(playerSelection, computerSelection));
-  }
-}
-
-console.log(game());
-
-  
-  </script>
-
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Rock Paper Scissors</title>
+  </head> 
+  <body>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+    <div class="score-board">
+       <div id="user-label" class="badge">user</div>
+       <div id="comp-label" class="badge" >comp</div>
+       <span id="user-score">0</span><span>:</span><span id="comp-score">0</span>
+    </div>
+    <div class="result">
+      <p>Paper covers rock. You win!</p>
+    </div>
+    <div class="choices">
+       <div id="r" class="choice">
+         <img src="images/Rock.png" alt="">
+       </div>
+       <div id="p" class="choice">
+        <img src="images/Paper.png" alt="">
+      </div>
+      <div id="s" class="choice">
+        <img src="images/Scissors.png" alt="">
+      </div>
+    </div>
+     <p id="action-message">Make your move.</p>
+    <script src="script.js"></script>
+  </body>
 </html>
